@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Discharge Slip Assistant</title>
+
+    <style>
+        /* ===== Page Background ===== */
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background-image: url("bgpress.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ===== Overlay for better readability ===== */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.25);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* ===== Main Container ===== */
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            width: 500px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: center;
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #2c3e50;
+        }
+
+        textarea, input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 140px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #27ae60;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        /* ===== Logout Button ===== */
+        .logout-btn {
+            background-color: #c0392b;
+        }
+
+        .logout-btn:hover {
+            background-color: #a93226;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Background Overlay -->
+<div class="overlay"></div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <!-- STEP 1 -->
+    <h2>🏥 Hospital Discharge Slip Assistant</h2>
+    <p>For Hospital Staff Only (Not for Patients)</p>
+
+    <!-- STEP 2 -->
+    <form>
+        <label for="dischargeText">Paste Discharge Slip Text</label>
+        <textarea id="dischargeText" placeholder="Paste discharge summary here..."></textarea>
+
+        <label for="fileUpload">OR Upload Discharge Slip</label>
+        <input type="file" id="fileUpload" accept=".txt">
+
+        <label for="age">Patient Age</label>
+        <input type="number" id="age" min="0" max="120" placeholder="Enter patient age">
+
+        <label for="language">Preferred Language</label>
+        <select id="language">
+            <option>English</option>
+            <option>Tamil</option>
+            <option>Hindi</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- ✅ LOGOUT BUTTON -->
+    <button type="button" class="logout-btn"
+        onclick="window.location.href='log.html'">
+        Logout
+    </button>
+
+</div>
+
+</body>
+</html>
